@@ -1,0 +1,32 @@
+@use "../colors";
+
+.a {
+    text-decoration: none;
+}
+
+.btn {
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn--yellow {
+    background-color: colors.$lemon;
+    color: colors.$strawberry;
+    font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
+    border-radius: 3.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    max-width: 320px;
+}
+
+.btn--pink {
+    background-color: colors.$strawberry;
+    color: colors.$lemon;
+    font-size: clamp(0.9rem, 1vw + 1rem, 1rem);
+    line-height: 1.25rem;
+    border-radius: 3.5rem;
+    width: 8.75rem;
+
+}
