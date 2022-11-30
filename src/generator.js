@@ -68,7 +68,8 @@ class Scene {
                 this.donut.rotation.z = 0.2;
 
                 console.log(gltf.scene);
-                this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xeeeeee});
+                this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0x783B00});
+                this.donut.children[0].material = new THREE.MeshBasicMaterial({color: 0xffe135});
                 this.scene.add(this.donut);
             }
         );
