@@ -10,11 +10,6 @@
 
     color: colors.$light;
     text-transform: uppercase;
-
-    background-image: url("../../../public/assets/images/bg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .header__center {
@@ -24,11 +19,6 @@
 h1 {
     font-weight: 700;
     line-height: 1.2;
-    font-size: 2.4rem;
-  }
-
-p {
-    font-weight: 600;
-    padding: 2.8rem 0;
-}
-  
+    font-size: 2rem;
+    color: colors.$strawberry;
+  }  

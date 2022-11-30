@@ -7,9 +7,13 @@ nav {
 .navigation {
     background-color: colors.$strawberry;
     position: fixed;
-    top: 0;
     z-index: 99;
 }
+
+.navigation--top {
+    top: 0;
+}
+
 
 .navbar {
     position: relative;
@@ -40,4 +44,32 @@ nav {
 .navbar-brand {
     position: fixed;
     top: 1rem;
+}
+
+.navigation--bottom {
+    bottom: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+
+}
+
+
+.navigation__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: .2em;
+    text-transform: uppercase;
+    color: colors.$lemon;
+}
+
+.navigation__item:hover {
+    color: colors.$heaven;
+    text-decoration: none;
+
 }
