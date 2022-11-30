@@ -51,7 +51,7 @@ body {
 }
 
 .header__center {
-  margin: 4.6rem 3rem;
+  margin: 3.8rem 3rem 0.8rem 3rem;
 }
 
 h1 {
@@ -191,4 +191,12 @@ nav {
 
 main {
   height: 60vh;
+}
+
+#threeGenerator {
+  height: 20px;
+}
+
+.generator__menu {
+  display: block;
 }

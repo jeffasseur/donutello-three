@@ -1,6 +1,4 @@
-import '/style.css'
-
-import Scene from "./src/index.js";
+import Scene from "./src/generator.js";
 
 const scene = new Scene();
 scene.init();

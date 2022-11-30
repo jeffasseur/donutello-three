@@ -88,7 +88,13 @@
     </div>
   </header>
   <main class="generator">
-    <div class="generator__preview"  id="threeGenerator"></div>
+
+    <div class="generator__preview"  id="threeGenerator">
+      <script type="module" src="./main.js"></script>
+    </div>
+  </main>
+
+
     <form action="#" method="post" class="donutForm">
       <div class="donutForm__item donutForm__item--toppings">
         <label for="topping">Topping</label>
@@ -105,7 +111,6 @@
         <input type="text" name="icingflavour" id="icingflavour" placeholder="strawberry">
       </div>
     </form>
-  </main>
   <nav class="navbar navigation navigation--bottom">
     <a href="#" class="navigation__item">
       <i class="fas fa-home"></i>
@@ -116,12 +121,11 @@
       <span>Download</span>
     </a>
     <a href="#" class="navigation__item">
-      <i class="fas fa-shopping-cart"></i>
-      <span>Cart</span>
+      <i class="fas fa-check"></i>
+      <span>Bestel</span>
     </a>
   </nav>
   <script src="./src/nav.js"></script>
-  <script src="./src/generator.js"></script>
 </body>
 
 </html>
