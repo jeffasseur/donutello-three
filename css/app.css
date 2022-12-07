@@ -23,8 +23,10 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  height: 100vh;
+  height: 90vh;
   min-height: 100vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .text-yellow {
@@ -190,11 +192,17 @@ nav {
 }
 
 main {
-  height: 60vh;
+  height: 40vh;
 }
 
 #threeGenerator {
-  height: 20px;
+  height: 400px;
+  width: 400px;
+}
+
+canvas {
+  height: 400px;
+  width: 400px;
 }
 
 .generator__menu {

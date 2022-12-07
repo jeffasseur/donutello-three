@@ -90,26 +90,26 @@
   <main class="generator">
 
     <div class="generator__preview"  id="threeGenerator">
-      <script type="module" src="./main.js"></script>
     </div>
   </main>
 
 
-    <form action="#" method="post" class="donutForm">
+    <form class="donutForm" method="post">
       <div class="donutForm__item donutForm__item--toppings">
         <label for="topping">Topping</label>
         <select name="topping" id="topping">
           <option value="none">None</option>
-          <option value="sprinkles">Sprinkles</option>
-          <option value="chocolate">Chocolate</option>
-          <option value="caramel">Caramel</option>
+          <option value="sprinkles">Chocolate Sprinkles</option>
+          <option value="chocolate">Rainbow Sprinkles</option>
+          <option value="caramel">Sugar Sprinkles</option>
           <option value="nuts">Nuts</option>
       </div>
       <div class="donutForm__item donutForm__item--icing">
         <label for="icingcolor">Glazuur</label>
-        <input type="text" name="icingcolor" id="icingcolor" placeholder="#E72C70">
+        <input type="text" name="icingcolor" id="icingColor" placeholder="Your brand color">
         <input type="text" name="icingflavour" id="icingflavour" placeholder="strawberry">
       </div>
+      <button type="submit" id="bakeDonut">Bake Donut</button>
     </form>
   <nav class="navbar navigation navigation--bottom">
     <a href="#" class="navigation__item">
@@ -126,6 +126,7 @@
     </a>
   </nav>
   <script src="./src/nav.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>

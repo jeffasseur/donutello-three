@@ -18,8 +18,11 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  height: 100vh;
+  height: 90vh; //hihi alle code weg :(
   min-height: 100vh;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .text-yellow {
