@@ -1,7 +1,8 @@
 @use "./colors";
 @use "./global";
+@use "./components/generator";
+@use "./components/form";
 @use "./components/header";
 @use "./components/alert";
 @use "./components/btn";
 @use "./components/nav";
-@use "./components/generator";

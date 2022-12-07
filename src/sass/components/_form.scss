@@ -1,0 +1,88 @@
+@use "../colors";
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 2em;
+}
+
+input {
+    border: unset;
+    background-color: white;
+}
+
+.donutForm__item {
+    display: inline-block;
+    margin: 1em 0;
+}
+
+.donutForm__item label {
+    margin: 1em;
+}
+
+select {
+    padding: .5em 1em;
+    border-radius: 3em;
+}
+
+
+.btn {
+        display: inline-block;
+        cursor: pointer;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 1em 2em;
+        border-radius: 3em;
+        font-size: 1rem;
+        transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        width: max-content;
+}
+
+#bakeDonut:hover {
+    background-color: colors.$lemon;
+    color: colors.$strawberry!important;
+    text-decoration: none;
+}
+
+#customerLogo {
+    display: hidden;
+}
+
+
+.btn--yellow {
+    background-color: colors.$lemon;
+    color: colors.$strawberry;
+    font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
+    border-radius: 3.5rem;
+    max-width: 320px;
+}
+
+#customerLogo {
+    display: inline-block;
+    //background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid colors.$heaven;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+}
+
+#customerLogo:hover {
+    //border-color: black;
+}
+
+#customerLogo:active {
+    //background: linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+@media (min-width: 1000px) {
+    form {
+        grid-area: 2 / 1 / 5 / 3;
+    }
+}

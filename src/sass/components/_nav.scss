@@ -73,3 +73,26 @@ nav {
     text-decoration: none;
 
 }
+
+@media (min-width: 1000px) {
+    nav.navigation--bottom {
+        position: absolute;
+        height: 100vh;
+        width: 6rem;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        
+        grid-area: 1 / 6 / 5 / 7;
+    }    
+
+    .navigation__item {
+        padding: 2em .5em;
+    }
+
+    
+}

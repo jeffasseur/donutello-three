@@ -12,8 +12,8 @@
     text-transform: uppercase;
 }
 
-.header__center {
-    margin: 3.8rem 3rem .8rem 3rem;
+.header--center {
+    margin: 8rem 3rem 0rem 3rem;
 }
 
 h1 {
@@ -22,3 +22,10 @@ h1 {
     font-size: 2rem;
     color: colors.$strawberry;
   }  
+
+@media (min-width: 1000px) {
+    .header {
+        grid-area: 1 / 1 / 2 / 6;
+        text-align: left;
+    }
+}
