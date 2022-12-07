@@ -1,11 +1,16 @@
 main {
-    height: 60vh;
+    height: 40vh;
 }
 
 #threeGenerator {
-    height: 20px;
+    height: 400px;
+    width: 400px;
 }
 
+canvas {
+    height: 400px;
+    width: 400px;
+}
 
 .generator__menu {
     display: block;

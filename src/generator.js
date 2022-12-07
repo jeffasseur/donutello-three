@@ -6,6 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 let generator = document.querySelector('#threeGenerator');
 
+
 class Scene {
     constructor() {
         this.scene = new THREE.Scene();
@@ -15,7 +16,7 @@ class Scene {
         this.camera.position.z = 15;
 
         this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setSize(generator.width, generator.height);
         generator.appendChild(this.renderer.domElement);
         this.scene.background = new THREE.Color( 0x82D1E4 );
 
