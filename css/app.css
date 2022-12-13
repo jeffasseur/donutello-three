@@ -71,11 +71,6 @@ form {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: 0 2em;
-  background-color: #82D1E4;
-  padding: 2em 1em;
-  border-radius: 1em;
-  margin-left: 2em;
 }
 
 input#icingColor {
@@ -95,6 +90,10 @@ input#icingColor {
   display: inline-block;
   margin: 1em 0;
   width: 100%;
+}
+
+.donutForm--order .donutForm__item {
+  margin: 0.2em 0;
 }
 
 .donutForm__item label {
@@ -162,6 +161,13 @@ select {
   .forms {
     grid-area: 2/1/5/3;
     font-size: 1.4em;
+  }
+  .donutForm--order, .donutForm--config {
+    padding: 0 2em;
+    background-color: #82D1E4;
+    padding: 2em 1em;
+    border-radius: 1em;
+    margin-left: 2em;
   }
 }
 .header {
