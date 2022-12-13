@@ -6,11 +6,20 @@ form {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0 2em;
+
 }
 
-input {
+input#icingColor {
     border: unset;
     background-color: white;
+}
+
+.textinput {
+    display: inline-block;
+    border: none;
+    border-bottom: 4px solid colors.$strawberry;
+    width: 80%;
+    padding: 0 1em 0 0;
 }
 
 .donutForm__item {
@@ -26,6 +35,9 @@ select {
     padding: .5em 1em;
     border-radius: 3em;
 }
+
+
+
 
 
 .btn {
@@ -54,7 +66,7 @@ select {
 .btn--yellow {
     background-color: colors.$lemon;
     color: colors.$strawberry;
-    font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
+    font-size: .1em;
     border-radius: 3.5rem;
     max-width: 320px;
 }
@@ -71,14 +83,6 @@ select {
     text-shadow: 1px 1px #fff;
     font-weight: 700;
     font-size: 10pt;
-}
-
-#customerLogo:hover {
-    //border-color: black;
-}
-
-#customerLogo:active {
-    //background: linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
 @media (min-width: 1000px) {

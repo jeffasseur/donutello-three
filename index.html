@@ -92,7 +92,7 @@
     <div class="generator__preview" id="threeGenerator">
     </div>
 
-    <form class="donutForm" method="post">
+    <form class="donutForm donutForm--config" method="post">
       
       <div class="donutForm__item donutForm__item--icing">
         <label for="icingColor">Glazuur</label>
@@ -102,6 +102,7 @@
       <div class="donutForm__item donutForm__item--toppings">
         <label for="toppings">Topping</label>
         <select name="topping" id="toppings">
+          <option value="None">None</option>
           <option value="ChocolateSprinkles">Chocolate Sprinkles</option>
           <option value="RainbowSprinkles" selected>Rainbow Sprinkles</option>
           <option value="SugarSprinkles">Sugar Sprinkles</option>
@@ -114,21 +115,48 @@
       <button type="submit" id="bakeDonut" class="btn btn--yellow donutForm__item">Bake Donut</button>
     </form>
 
-    <nav class="navbar navigation navigation--bottom">
-      <a href="#" class="navigation__item">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="#" class="navigation__item btn--disabled">
-        <i class="fas fa-download "></i>
-        <span>Download</span>
-      </a>
-      <a href="#" class="navigation__item">
-        <i class="fas fa-check"></i>
-        <span>Bestel</span>
-      </a>
-    </nav>
+    <form action="" method="post" class="donutForm donutForm--order hidden">
+      <div class="donutForm__item">
+        <label for="clientName">Bedrijfsnaam:</label>
+        <input type="text" name="clientName" id="" class="textinput">
+      </div>
+      <div class="donutForm__item">
+        <label for="clientEmail">E-mailadres:</label>
+        <input type="text" name="clientEmail" id="" class="textinput">
+      </div>
+      <div class="donutForm__item">
+        <label for="clientEmail">Aantal donuts:</label>
+        <input type="number" name="amount" id="" class="textinput">
+      </div>
+      <div class="donutForm__item">
+        <label for="description">Opmerkingen:</label>
+        <input type="text" name="description" id="" class="textinput">
+      </div>
+      <div class="orderformButtons">
+        <button type="submit" class="btn btn--yellow">Bestel</button>
+        <a class=" btn btn--back">Terug</a>
+      </div>
 
+    </form>
+
+
+      <nav class="navbar navigation navigation--bottom">
+        <a href="#" class="navigation__item">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="navigation__item btn--disabled">
+          <i class="fas fa-download "></i>
+          <span>Download</span>
+        </a>
+        <a href="#" class="navigation__item orderButton">
+          <i class="fas fa-check"></i>
+          <span>Bestel</span>
+        </a>
+  
+      </nav>
+
+  
   </main>
 
 

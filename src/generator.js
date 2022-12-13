@@ -39,6 +39,7 @@ class Scene {
         this.addTextures();
         this.addModels();
         this.changeIcingColor();
+        this.addLogo();
         this.render();
     }
 
@@ -88,6 +89,7 @@ class Scene {
                 this.donut.children[0].material = new THREE.MeshBasicMaterial({color: 0x60D1D6});
                 this.changeIcingColor();
                 this.changeTopping();
+                this.addLogo();
                 this.scene.add(this.donut);
                 console.log(this.donut);
             }
@@ -114,24 +116,49 @@ class Scene {
             let Toppings = document.querySelector('#toppings');
             let topping = Toppings.options[Toppings.selectedIndex].value;
             switch(topping) {
+                case "None":
+                    this.donut.children[1].visible = false;
+                    break;
                 case "ChocolateSprinkles":
+                    this.donut.children[1].visible = true;
                     this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xa06000});
                     break;
                 case "RainbowSprinkles":
+                    this.donut.children[1].visible = true;
                     this.donut.children[1].matrix.elements[0,1,2,3,4,5] = new THREE.MeshBasicMaterial({color: 0xff0000});
                     break;
                 case "SugarSprinkles":
+                    this.donut.children[1].visible = true;
                     this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
                     break;
                 default:
+                    this.donut.children[1].visible = true;
                     this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
                     break;
             }
 
             e.preventDefault();
         });
-
     }
+
+    addLogo() {
+        const textureLoader = new THREE.TextureLoader();
+
+        this.cardGeometry = new THREE.BoxGeometry(2,1,0.1);
+        this.cardTexture = textureLoader.load("../public/assets/images/donutello-logo.png");
+        this.cardMaterial = new THREE.MeshLambertMaterial({ 
+            side: THREE.DoubleSide,
+            map: this.cardTexture,
+        });
+        this.cardTexture.wrapS = THREE.RepeatWrapping;
+        this.cardTexture.wrapT = THREE.RepeatWrapping;
+        this.card = new THREE.Mesh(this.cardGeometry, this.cardMaterial);
+        this.card.position.y = 0;
+        
+        this.scene.add(this.card);
+        console.log(this.card);
+    
+    } 
 
     render() {
         requestAnimationFrame(this.render.bind(this));

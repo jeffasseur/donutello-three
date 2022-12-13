@@ -32,6 +32,10 @@ body {
   color: #F7F249;
 }
 
+.hidden {
+  display: none;
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -78,9 +82,17 @@ form {
   padding: 0 2em;
 }
 
-input {
+input#icingColor {
   border: unset;
   background-color: white;
+}
+
+.textinput {
+  display: inline-block;
+  border: none;
+  border-bottom: 4px solid #E72C70;
+  width: 80%;
+  padding: 0 1em 0 0;
 }
 
 .donutForm__item {
@@ -127,7 +139,7 @@ select {
 .btn--yellow {
   background-color: #F7F249;
   color: #E72C70;
-  font-size: clamp(0.9rem, 1vw + 1rem, 1.5rem);
+  font-size: 0.1em;
   border-radius: 3.5rem;
   max-width: 320px;
 }
@@ -218,6 +230,13 @@ h1 {
   line-height: 1.25rem;
   border-radius: 3.5rem;
   width: 8.75rem;
+}
+
+.btn--back {
+  background-color: none;
+  color: #E72C70;
+  text-decoration: underline;
+  text-transform: lowercase;
 }
 
 .btn--disabled {
@@ -340,6 +359,7 @@ nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    z-index: 99;
     grid-area: 1/6/5/7;
   }
   .navigation__item {

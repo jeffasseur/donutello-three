@@ -74,6 +74,8 @@ nav {
 
 }
 
+
+
 @media (min-width: 1000px) {
     nav.navigation--bottom {
         position: absolute;
@@ -86,6 +88,7 @@ nav {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
+        z-index: 99;
         
         grid-area: 1 / 6 / 5 / 7;
     }    
