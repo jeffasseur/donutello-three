@@ -22,6 +22,7 @@ orderButton.addEventListener('click', (e) => {
     configForm.classList.add('hidden');
     orderForm.classList.remove('hidden');
     e.preventDefault();
+    console.log(document.querySelector("#customerLogo").value);
 });
 
 closeOrderButton.addEventListener('click', (e) => {
