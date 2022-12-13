@@ -72,6 +72,10 @@ form {
       -ms-flex-pack: start;
           justify-content: flex-start;
   padding: 0 2em;
+  background-color: #82D1E4;
+  padding: 2em 1em;
+  border-radius: 1em;
+  margin-left: 2em;
 }
 
 input#icingColor {

@@ -6,6 +6,8 @@ let customerEmail = document.querySelector('#customerEmail').value;
 let amount = document.querySelector('#amount').value;
 let message = document.querySelector('#message').value;
 
+let customerLogo = document.querySelector('#customerLogo').value;
+
 let donutOrder = {
     donut : {
         icing : icingColor,
