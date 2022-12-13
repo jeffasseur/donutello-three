@@ -25,6 +25,7 @@ input#icingColor {
 .donutForm__item {
     display: inline-block;
     margin: 1em 0;
+    width: 100%;
 }
 
 .donutForm__item label {
@@ -85,8 +86,13 @@ select {
     font-size: 10pt;
 }
 
+.donutForm--order {
+    width: 100%;
+}
+
 @media (min-width: 1000px) {
-    form {
+    .forms {
         grid-area: 2 / 1 / 5 / 3;
+        font-size: 1.4em;
     }
 }

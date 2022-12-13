@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   font-family: Dosis, sans-serif;
+  max-height: 100%;
 }
 
 body {
@@ -23,9 +24,7 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
-  height: 90vh;
-  min-height: 100vh;
-  overflow: hidden;
+  height: 100vh;
 }
 
 .text-yellow {
@@ -42,17 +41,10 @@ main {
 }
 
 #threeGenerator {
-  height: 400px;
-  width: 400px;
-}
-
-canvas {
-  height: 400px;
-  width: 400px;
-}
-
-.generator__menu {
-  display: block;
+  height: 100vh;
+  aspect-ratio: 1/1;
+  margin: 0;
+  padding: 0;
 }
 
 @media (min-width: 1000px) {
@@ -61,8 +53,8 @@ canvas {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
-  .generator__preview {
-    grid-area: 1/2/5/6;
+  #threeGenerator {
+    grid-area: 1/3/5/7;
   }
 }
 form {
@@ -98,6 +90,7 @@ input#icingColor {
 .donutForm__item {
   display: inline-block;
   margin: 1em 0;
+  width: 100%;
 }
 
 .donutForm__item label {
@@ -157,9 +150,14 @@ select {
   font-size: 10pt;
 }
 
+.donutForm--order {
+  width: 100%;
+}
+
 @media (min-width: 1000px) {
-  form {
+  .forms {
     grid-area: 2/1/5/3;
+    font-size: 1.4em;
   }
 }
 .header {
@@ -182,13 +180,14 @@ select {
 }
 
 .header--center {
-  margin: 8rem 3rem 0rem 3rem;
+  margin: 0rem 3rem 0rem 3rem;
 }
 
 h1 {
   font-weight: 700;
   line-height: 1.2;
-  font-size: 2rem;
+  font-size: 4em;
+  padding-top: 2em;
   color: #E72C70;
 }
 
@@ -245,6 +244,7 @@ h1 {
 
 nav {
   height: 76px;
+  font-size: 1.6em;
 }
 
 .navigation {
@@ -258,7 +258,6 @@ nav {
 }
 
 .navbar {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -293,6 +292,7 @@ nav {
 
 .navbar-brand {
   position: fixed;
+  left: 8rem;
   top: 1rem;
 }
 
@@ -341,7 +341,6 @@ nav {
   nav.navigation--bottom {
     position: absolute;
     height: 100vh;
-    width: 6rem;
     bottom: 0;
     right: 0;
     display: -webkit-box;
@@ -359,10 +358,15 @@ nav {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    z-index: 99;
+    z-index: 1;
     grid-area: 1/6/5/7;
   }
   .navigation__item {
     padding: 2em 0.5em;
+  }
+  .navigation--top .container {
+    z-index: 10000;
+    position: relative;
+    right: -280px;
   }
 }

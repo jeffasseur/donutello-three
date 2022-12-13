@@ -2,6 +2,7 @@
 
 nav {
     height: 76px;
+    font-size: 1.6em;
 }
 
 .navigation {
@@ -16,7 +17,6 @@ nav {
 
 
 .navbar {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -43,8 +43,10 @@ nav {
 
 .navbar-brand {
     position: fixed;
+    left: 8rem;
     top: 1rem;
 }
+
 
 .navigation--bottom {
     bottom: 0;
@@ -80,7 +82,6 @@ nav {
     nav.navigation--bottom {
         position: absolute;
         height: 100vh;
-        width: 6rem;
         bottom: 0;
         right: 0;
         display: flex;
@@ -88,13 +89,19 @@ nav {
         flex-wrap: nowrap;
         align-items: center;
         justify-content: center;
-        z-index: 99;
+        z-index: 1;
         
         grid-area: 1 / 6 / 5 / 7;
     }    
 
     .navigation__item {
         padding: 2em .5em;
+    }
+
+    .navigation--top .container {
+        z-index: 10000;
+        position: relative;
+        right: -280px;
     }
 
     

@@ -19,13 +19,13 @@ class Scene {
 
     init() {
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 600);
+        this.camera = new THREE.PerspectiveCamera(50, generator.clientWidth / generator.clientHeight, 1, 1600);
         this.camera.position.x = 0;
         this.camera.position.y = 3;
         this.camera.position.z = 15;
 
         this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize( window.innerWidth, window.innerHeight );
+        this.renderer.setSize( generator.clientWidth, generator.clientHeight );
         generator.appendChild( this.renderer.domElement );
         this.scene.background = new THREE.Color( 0xffffff );
 
@@ -136,7 +136,6 @@ class Scene {
                     this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
                     break;
             }
-
             e.preventDefault();
         });
     }
