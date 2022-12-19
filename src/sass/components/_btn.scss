@@ -38,6 +38,12 @@
     text-transform: lowercase;
 }
 
-.btn--disabled {
-    color: gray;
+.btn.btn--disabled {
+    color: rgb(194, 194, 194);
+}
+
+.btn.btn--disabled:hover {
+    color: rgb(194, 194, 194);
+    cursor: not-allowed;
+
 }

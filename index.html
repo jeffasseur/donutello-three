@@ -93,71 +93,71 @@
     </div>
 
     <div class="forms">
-      <form action="" class="bakeForm" id="bakeForm" method="post">
-        <div class="donutForm donutForm--config">
-          <div class="donutForm__item donutForm__item--icing">
-            <label for="icingColor">Glazuur</label>
-            <input type="color" value="#82D1E4" name="icing" id="icingColor" />
-          </div>
-
-          <div class="donutForm__item donutForm__item--toppings">
-            <label for="toppings">Topping</label>
-            <select name="topping" id="toppings">
-              <option value="None">None</option>
-              <option value="ChocolateSprinkles">Chocolate Sprinkles</option>
-              <option value="SugarSprinkles" selected>Sugar Sprinkles</option>
-            </select>
-          </div>
-          <div class="donutForm__item">
-            <label for="logo">Your Logo</label>
-            <input type="file" accept="image/png, image/jpg, image/gif, image/jpeg" name="logo" id="customerLogo"
-              class="btn" />
-          </div>
-          <a id="bakeDonut" class="btn btn--yellow donutForm__item">Bake Donut</a>
+      <form class="donutForm donutForm--config" method="post">
+        
+        <div class="donutForm__item donutForm__item--icing">
+          <label for="icingColor">Glazuur</label>
+          <input type="color" value="#82D1E4" name="icingColor" id="icingColor"/>
         </div>
-          <div class="donutForm donutForm--order hidden">
-            <div class="donutForm__item">
-              <label for="clientName">Bedrijfsnaam:</label>
-              <input type="text" name="name" id="customerName" class="textinput">
-            </div>
-            <div class="donutForm__item">
-              <label for="clientEmail">E-mailadres:</label>
-              <input type="text" name="email" id="customerEmail" class="textinput">
-            </div>
-            <div class="donutForm__item">
-              <label for="clientEmail">Aantal donuts:</label>
-              <input type="number" name="amount" id="amount" class="textinput">
-            </div>
-            <div class="donutForm__item">
-              <label for="description">Opmerkingen:</label>
-              <input type="text" name="message" id="message" class="textinput">
-            </div>
-            <div class="orderformButtons">
-              <button type="submit" class="btn btn--yellow" id="orderThisDonut">Bestel</button>
-              <a class=" btn btn--back">Terug</a>
-            </div>
-          </div>
+
+        <div class="donutForm__item donutForm__item--toppings">
+          <label for="toppings">Topping</label>
+          <select name="topping" id="toppings">
+            <option value="None">None</option>
+            <option value="ChocolateSprinkles" >Chocolate Sprinkles</option>
+            <option value="SugarSprinkles" selected>Sugar Sprinkles</option>
+          </select>
+        </div>
+        <div class="donutForm__item">
+          <label for="logo">Your Logo</label>
+          <input type="file" accept="image/png, image/jpg, image/gif, image/jpeg" name="logo" id="customerLogo" class="btn" />
+        </div>
+        <button type="submit" id="bakeDonut" class="btn btn--yellow donutForm__item">Bake Donut</button>
+      </form>
+
+      <form action="" method="post" class="donutForm donutForm--order hidden">
+        <div class="donutForm__item">
+          <label for="clientName">Bedrijfsnaam:</label>
+          <input type="text" name="clientName" id="customerName" class="textinput">
+        </div>
+        <div class="donutForm__item">
+          <label for="clientEmail">E-mailadres:</label>
+          <input type="text" name="clientEmail" id="customerEmail" class="textinput">
+        </div>
+        <div class="donutForm__item">
+          <label for="clientEmail">Aantal donuts:</label>
+          <input type="number" name="amount" id="amount" class="textinput">
+        </div>
+        <div class="donutForm__item">
+          <label for="description">Opmerkingen:</label>
+          <input type="text" name="description" id="message" class="textinput">
+        </div>
+        <div class="orderformButtons">
+          <button type="submit" class="btn btn--yellow" id="orderThisDonut">Bestel</button>
+          <a class=" btn btn--back">Terug</a>
+        </div>
+
       </form>
     </div>
 
 
-    <nav class="navbar navigation navigation--bottom">
-      <a href="https://profound-zabaione-820c6a.netlify.app/" class="navigation__item">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="#" class="navigation__item btn--disabled">
-        <i class="fas fa-download "></i>
-        <span>Download</span>
-      </a>
-      <a href="#" class="navigation__item orderButton">
-        <i class="fas fa-check"></i>
-        <span>Bestel</span>
-      </a>
+      <nav class="navbar navigation navigation--bottom">
+        <a href="https://profound-zabaione-820c6a.netlify.app/" class="navigation__item">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="#" class="navigation__item btn--disabled">
+          <i class="fas fa-download "></i>
+          <span>Download</span>
+        </a>
+        <a href="#" class="navigation__item orderButton">
+          <i class="fas fa-check"></i>
+          <span>Bestel</span>
+        </a>
+  
+      </nav>
 
-    </nav>
-
-
+  
   </main>
 
 
