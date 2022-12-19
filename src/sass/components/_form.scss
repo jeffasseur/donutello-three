@@ -1,21 +1,40 @@
 @use "../colors";
 
-form {
+.donutForm {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 0 2em;
     background-color: colors.$heaven;
-    padding: 2em 1em;
     border-radius: 1em;
     margin-left:2em;
-
 }
 
-input#icingColor {
-    border: unset;
-    background-color: white;
+.donutForm--config {
+    padding: 1em 1em;
+}
+
+.donutForm--order {
+    padding: 1em;
+}
+
+input[type="color"] {
+    -webkit-appearence: none;
+    padding: .5em;
+    border-radius: 3em;
+    background-color: colors.$pastel-yellow;
+    border: none;
+    width: 6em;
+    height: 32px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+    border-radius: 3em;
+    
 }
 
 .textinput {
@@ -26,19 +45,26 @@ input#icingColor {
     padding: 0 1em 0 0;
 }
 
+.donutForm--config .donutForm__item label {
+    margin: 1em;
+}
+
+.donutForm--order .donutForm__item label {
+    margin: .2em;
+
+}
+
 .donutForm__item {
     display: inline-block;
     margin: 1em 0;
     width: 100%;
 }
 
-.donutForm__item label {
-    margin: 1em;
-}
-
-select {
-    padding: .5em 1em;
+select, option {
+    padding: .5em .6em;
     border-radius: 3em;
+    background-color: colors.$pastel-yellow;
+    border: none;
 }
 
 

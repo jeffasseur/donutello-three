@@ -31,7 +31,7 @@ body {
   color: #F7F249;
 }
 
-.hidden {
+form.hidden {
   display: none;
 }
 
@@ -57,7 +57,7 @@ main {
     grid-area: 1/3/5/7;
   }
 }
-form {
+.donutForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,16 +71,36 @@ form {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: 0 2em;
   background-color: #82D1E4;
-  padding: 2em 1em;
   border-radius: 1em;
   margin-left: 2em;
 }
 
-input#icingColor {
-  border: unset;
-  background-color: white;
+.donutForm--config {
+  padding: 1em 1em;
+}
+
+.donutForm--order {
+  padding: 1em;
+}
+
+input[type=color] {
+  -webkit-appearence: none;
+  padding: 0.5em;
+  border-radius: 3em;
+  background-color: #F8F594;
+  border: none;
+  width: 6em;
+  height: 32px;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch {
+  border: none;
+  border-radius: 3em;
 }
 
 .textinput {
@@ -91,19 +111,25 @@ input#icingColor {
   padding: 0 1em 0 0;
 }
 
+.donutForm--config .donutForm__item label {
+  margin: 1em;
+}
+
+.donutForm--order .donutForm__item label {
+  margin: 0.2em;
+}
+
 .donutForm__item {
   display: inline-block;
   margin: 1em 0;
   width: 100%;
 }
 
-.donutForm__item label {
-  margin: 1em;
-}
-
-select {
-  padding: 0.5em 1em;
+select, option {
+  padding: 0.5em 0.6em;
   border-radius: 3em;
+  background-color: #F8F594;
+  border: none;
 }
 
 .btn {
@@ -242,8 +268,13 @@ h1 {
   text-transform: lowercase;
 }
 
-.btn--disabled {
-  color: gray;
+.btn.btn--disabled {
+  color: rgb(194, 194, 194);
+}
+
+.btn.btn--disabled:hover {
+  color: rgb(194, 194, 194);
+  cursor: not-allowed;
 }
 
 nav {
