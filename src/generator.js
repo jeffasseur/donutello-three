@@ -124,21 +124,19 @@ class Scene {
     addLogo() {
         let customerLogo = document.querySelector('#customerLogo');
         // let uploadedLogo = customerLogo;
+        let submitLogo = document.querySelector('#bakeDonut');
 
-        customerLogo.addEventListener('change', (e) => {
+        submitLogo.addEventListener('click', (e) => {
 
-            const reader = new FileReader();
-            reader.addEventListener('load', (e) => {
-                const uploadedLogo = reader.result;
-                console.log(uploadedLogo);
+                const uploadedLogo = "../assets/images/tm-logo.png";
 
-                this.cardTexture = new THREE.TextureLoader().load(uploadedImage);
+                this.cardTexture = new THREE.TextureLoader().load(uploadedLogo);
                 console.log(this.cardTexture);
 
                 //rect card
                 this.cardGeometry = new THREE.BoxGeometry(2, 1, 0.1);
                 this.cardMaterial = new THREE.MeshLambertMaterial({
-                    color: 0xdddddd,
+                    color: 0xbbbbbb,
                     side: THREE.DoubleSide,
                     map: this.cardTexture,
                 });
@@ -146,21 +144,14 @@ class Scene {
                 this.cardTexture.wrapT = THREE.RepeatWrapping;
                 this.cardTexture.repeat.set(1, 1);
                 this.card = new THREE.Mesh(this.cardGeometry, this.cardMaterial);
-                this.card.name = "Logocard";
 
-                this.card.position.x = 0;
-                this.card.position.y = 4;
+                this.card.position.x = 3;
+                this.card.position.z = 0;
+                this.card.position.y = .6;
 
-                let submitLogo = document.querySelector('#bakeDonut');
-                submitLogo.addEventListener('click', (e) => {
-                    if (this.scene.getObjectByName("Logocard")) {
-                        this.scene.remove(this.card);
-                    } else {
-                        this.scene.add(this.card);
-                    }
-                });
+                this.scene.add(this.card);
+
             });
-        });
     }
 
 
