@@ -161,9 +161,93 @@
   </main>
 
 
-  <script src="./src/nav.js"></script>
-  <script type="module" src="./src/configForm.js"></script>
   <script type="module" src="./main.js"></script>
+  <script>
+let navbar = document.querySelector(".navbar");
+let button = document.querySelector(".navbar-toggler");
+let navContent = document.querySelector("#navbarSupportedContent");
+
+button.addEventListener("click", function() {
+    if (button.classList.contains("collapsed")) {
+        button.classList.remove("collapsed");
+        navContent.classList.add("show");
+    } else {
+        button.classList.add("collapsed");
+        navContent.classList.remove("show");
+    }
+});
+
+
+let orderForm = document.querySelector('.donutForm--order');
+let configForm = document.querySelector('.donutForm--config');
+let orderButton = document.querySelector('.orderButton');
+let closeOrderButton = document.querySelector('.btn--back');
+
+orderButton.addEventListener('click', (e) => {
+    configForm.classList.add('hidden');
+    orderForm.classList.remove('hidden');
+    e.preventDefault();
+    console.log(document.querySelector("#customerLogo").value);
+});
+
+closeOrderButton.addEventListener('click', (e) => {
+    configForm.classList.remove('hidden');
+    orderForm.classList.add('hidden');
+    e.preventDefault();
+});
+
+document.querySelector('#orderThisDonut').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let icingColor = document.querySelector("#icingColor");
+    let toppings = document.querySelector('#toppings');
+
+    let customerName = document.querySelector('input[name=clientName]').value;
+    let customerEmail = document.querySelector('input[name=clientEmail]').value;
+    let amount = document.querySelector('input[name=amount]').value;
+    let message = document.querySelector('input[name=message]').value;
+
+    let customerLogo = document.querySelector('#customerLogo').value;
+    customerLogo = "https://cdn.logo.com/hotlink-ok/logo-social.png"
+
+    let donutOrder = {
+        donut: {
+            icing: icingColor.value,
+            topping: toppings.value,
+            logo: customerLogo
+        },
+        client: {
+            name: customerName,
+            email: customerEmail,
+        },
+        order: {
+            amount: amount,
+            message: message
+        }
+    }
+
+    console.log(donutOrder);
+
+    fetch('https://donutello-backend-n95w.onrender.com/api/v1/donuts/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(donutOrder)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            window.location.href = "https://the-donut-generator.vercel.app/thankyou.html";
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert("Something went wrong, please try again later");
+        });
+});
+
+
+  </script>
 </body>
 
 </html>
