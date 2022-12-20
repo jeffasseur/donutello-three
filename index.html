@@ -129,7 +129,7 @@
           <input type="number" name="amount" id="amount" class="textinput">
         </div>
         <div class="donutForm__item">
-          <label for="description">Opmerkingen:</label>
+          <label for="message">Opmerkingen:</label>
           <input type="text" name="message" id="message" class="textinput">
         </div>
         <div class="orderformButtons">
@@ -222,7 +222,7 @@ document.querySelector('#orderThisDonut').addEventListener('click', (e) => {
         },
         order: {
             amount: amount,
-            message: message
+            description: message
         }
     }
 
