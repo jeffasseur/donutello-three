@@ -38,6 +38,7 @@ class Scene {
         this.addLights();
         this.addTextures();
         this.addModels();
+        this.addLights();
         this.changeIcingColor();
         this.addLogo();
         this.render();
@@ -63,7 +64,7 @@ class Scene {
     }
 
     addLights() {
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
         this.scene.add(ambientLight);
 
         const pointLight = new THREE.PointLight(0xffffff, 0.5);
