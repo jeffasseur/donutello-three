@@ -1,6 +1,3 @@
-// email:   sienvdbergh@gmail.com
-// pw:      Donutello!2022
-
 document.querySelector('#orderThisDonut').addEventListener('click', (e) => {
     e.preventDefault();
 
