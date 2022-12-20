@@ -25,9 +25,9 @@ class Scene {
         this.camera.position.z = 15;
 
         this.renderer = new THREE.WebGLRenderer();
-        this.renderer.setSize( generator.clientWidth, generator.clientHeight );
-        generator.appendChild( this.renderer.domElement );
-        this.scene.background = new THREE.Color( 0xffffff );
+        this.renderer.setSize(generator.clientWidth, generator.clientHeight);
+        generator.appendChild(this.renderer.domElement);
+        this.scene.background = new THREE.Color(0xffffff);
 
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
         this.controls.target.set(0, -4, 0);
@@ -36,31 +36,11 @@ class Scene {
         this.clock = new THREE.Clock();
 
         this.addLights();
-        this.addTextures();
         this.addModels();
         this.addLights();
         this.changeIcingColor();
         this.addLogo();
         this.render();
-    }
-
-    addTextures() {
-        // const textureLoader = new THREE.TextureLoader();
-        // this.axesHelper = new THREE.AxesHelper( 5 );
-        // this.scene.add( this.axesHelper );
-
-        // this.cardGeometry = new THREE.BoxGeometry(1,1,1.5);
-        // console.log(this.cardGeometry);
-        // this.cardMaterial = new THREE.MeshLambertMaterial({ color: 0x000000 });
-        // this.cardTexture = textureLoader.load("../../assets/images/donutello-logo.png");
-        // this.cardTexture.wrapS = THREE.RepeatWrapping;
-        // this.cardTexture.wrapT = THREE.RepeatWrapping;
-        // this.cardMaterial.map = this.cardTexture;
-        // this.card = new THREE.Mesh(this.cardGeometry, this.cardMaterial);
-        // this.card.position.y = 0;
-        
-        // this.scene.add(this.card);
-
     }
 
     addLights() {
@@ -79,15 +59,15 @@ class Scene {
             "../assets/models/donut.glb",
             (gltf) => {
                 this.donut = gltf.scene;
-                this.donut.scale.set(75,75,75);
+                this.donut.scale.set(75, 75, 75);
 
                 this.donut.position.x = 0;
                 this.donut.position.y = -6;
                 this.donut.position.z = 0;
 
                 //console.log(this.donut);
-                this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
-                this.donut.children[0].material = new THREE.MeshBasicMaterial({color: 0x60D1D6});
+                this.donut.children[1].material = new THREE.MeshBasicMaterial({ color: 0xffffff });
+                this.donut.children[0].material = new THREE.MeshBasicMaterial({ color: 0x60D1D6 });
                 this.changeIcingColor();
                 this.changeTopping();
                 this.addLogo();
@@ -101,10 +81,10 @@ class Scene {
         let submitIcing = document.querySelector('#bakeDonut');
         submitIcing.addEventListener('click', (e) => {
             let brandColor = document.querySelector("#icingColor").value;
-            if(brandColor !== ""){
-                this.donut.children[0].material = new THREE.MeshBasicMaterial({color: brandColor});
+            if (brandColor !== "") {
+                this.donut.children[0].material = new THREE.MeshBasicMaterial({ color: brandColor });
             } else {
-                this.donut.children[0].material = new THREE.MeshBasicMaterial({color: 0x60D1D6});
+                this.donut.children[0].material = new THREE.MeshBasicMaterial({ color: 0x60D1D6 });
             }
 
             e.preventDefault();
@@ -116,25 +96,25 @@ class Scene {
         submitIcing.addEventListener('click', (e) => {
             let Toppings = document.querySelector('#toppings');
             let topping = Toppings.options[Toppings.selectedIndex].value;
-            switch(topping) {
+            switch (topping) {
                 case "None":
                     this.donut.children[1].visible = false;
                     break;
                 case "ChocolateSprinkles":
                     this.donut.children[1].visible = true;
-                    this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xa06000});
+                    this.donut.children[1].material = new THREE.MeshBasicMaterial({ color: 0xa06000 });
                     break;
                 case "RainbowSprinkles":
                     this.donut.children[1].visible = true;
-                    this.donut.children[1].matrix.elements[0,1,2,3,4,5] = new THREE.MeshBasicMaterial({color: 0xff0000});
+                    this.donut.children[1].matrix.elements[0, 1, 2, 3, 4, 5] = new THREE.MeshBasicMaterial({ color: 0xff0000 });
                     break;
                 case "SugarSprinkles":
                     this.donut.children[1].visible = true;
-                    this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
+                    this.donut.children[1].material = new THREE.MeshBasicMaterial({ color: 0xffffff });
                     break;
                 default:
                     this.donut.children[1].visible = true;
-                    this.donut.children[1].material = new THREE.MeshBasicMaterial({color: 0xffffff});
+                    this.donut.children[1].material = new THREE.MeshBasicMaterial({ color: 0xffffff });
                     break;
             }
             e.preventDefault();
@@ -142,30 +122,49 @@ class Scene {
     }
 
     addLogo() {
-        let submitLogo = document.querySelector('#bakeDonut');
         let customerLogo = document.querySelector('#customerLogo');
-        let uploadedLogo = customerLogo.path;
+        // let uploadedLogo = customerLogo;
 
-        submitLogo.addEventListener('click', (e) => {
-            const textureLoader = new THREE.TextureLoader();
+        customerLogo.addEventListener('change', (e) => {
 
-            this.cardGeometry = new THREE.BoxGeometry(2,1,0.1);
-            this.cardMaterial = new THREE.MeshLambertMaterial({ 
-                color: 0xdddddd,
-                side: THREE.DoubleSide,
-                map: this.cardTexture,
+            const reader = new FileReader();
+            reader.addEventListener('load', (e) => {
+                const uploadedLogo = reader.result;
+                console.log(uploadedLogo);
+
+                this.cardTexture = new THREE.TextureLoader().load(uploadedImage);
+                console.log(this.cardTexture);
+
+                //rect card
+                this.cardGeometry = new THREE.BoxGeometry(2, 1, 0.1);
+                this.cardMaterial = new THREE.MeshLambertMaterial({
+                    color: 0xdddddd,
+                    side: THREE.DoubleSide,
+                    map: this.cardTexture,
+                });
+                this.cardTexture.wrapS = THREE.RepeatWrapping;
+                this.cardTexture.wrapT = THREE.RepeatWrapping;
+                this.cardTexture.repeat.set(1, 1);
+                this.card = new THREE.Mesh(this.cardGeometry, this.cardMaterial);
+                this.card.name = "Logocard";
+
+                this.card.position.x = 0;
+                this.card.position.y = 4;
+
+                let submitLogo = document.querySelector('#bakeDonut');
+                submitLogo.addEventListener('click', (e) => {
+                    if (this.scene.getObjectByName("Logocard")) {
+                        this.scene.remove(this.card);
+                    } else {
+                        this.scene.add(this.card);
+                    }
+                });
             });
-            this.cardTexture = textureLoader.load("/public/assets/images/donutello-logo.png");
-            this.cardTexture.wrapS = THREE.RepeatWrapping;
-            this.cardTexture.wrapT = THREE.RepeatWrapping;
-            this.cardTexture.repeat.set(1,1);
-            this.card = new THREE.Mesh(this.cardGeometry, this.cardMaterial);
-            this.donut.children.push(this.card);
         });
+    }
 
-        
-    
-    } 
+
+
 
     render() {
         requestAnimationFrame(this.render.bind(this));

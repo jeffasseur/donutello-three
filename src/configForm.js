@@ -1,3 +1,5 @@
+// email:   sienvdbergh@gmail.com
+// pw:      Donutello!2022
 
 document.querySelector('#orderThisDonut').addEventListener('click', (e) => {
     e.preventDefault();
@@ -41,9 +43,11 @@ document.querySelector('#orderThisDonut').addEventListener('click', (e) => {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
+            window.location.href = "https://the-donut-generator.vercel.app/thankyou.html";
         })
         .catch((error) => {
             console.error('Error:', error);
+            alert("Something went wrong, please try again later");
         });
 });
 

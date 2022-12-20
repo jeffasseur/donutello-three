@@ -27,6 +27,55 @@ body {
   height: 100vh;
 }
 
+.thankyou {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #82D1E4;
+  background-image: url(../../public/assets/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.thankyou__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+  padding: 2rem;
+  background-color: #82D1E4;
+  border-radius: 8px;
+}
+
+h1.thankyou__header {
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+.thankyou__text {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 .text-yellow {
   color: #F7F249;
 }
@@ -71,9 +120,7 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  padding: 0 2em;
   background-color: #82D1E4;
-  padding: 2em 1em;
   border-radius: 1em;
   margin-left: 2em;
 }
@@ -105,6 +152,11 @@ input[type=color]::-webkit-color-swatch {
   border-radius: 3em;
 }
 
+input#icingColor {
+  border: unset;
+  background-color: white;
+}
+
 .textinput {
   display: inline-block;
   border: none;
@@ -125,10 +177,6 @@ input[type=color]::-webkit-color-swatch {
   display: inline-block;
   margin: 1em 0;
   width: 100%;
-}
-
-.donutForm--order .donutForm__item {
-  margin: 0.2em 0;
 }
 
 select, option {
@@ -194,13 +242,6 @@ select, option {
   .forms {
     grid-area: 2/1/5/3;
     font-size: 1.4em;
-  }
-  .donutForm--order, .donutForm--config {
-    padding: 0 2em;
-    background-color: #82D1E4;
-    padding: 2em 1em;
-    border-radius: 1em;
-    margin-left: 2em;
   }
 }
 .header {

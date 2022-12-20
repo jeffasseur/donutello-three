@@ -25,6 +25,44 @@ body {
   //overflow: hidden;
 }
 
+.thankyou {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+
+  background-color: colors.$heaven;
+  background-image: url(../../public/assets/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+
+}
+
+.thankyou__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5%;
+  padding: 2rem;
+
+  background-color: colors.$heaven;
+  border-radius: 8px;
+}
+
+h1.thankyou__header {
+  margin: 0;
+  padding: .5em 1em;
+}
+
+.thankyou__text {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
 .text-yellow {
   color: colors.$lemon;
 }
